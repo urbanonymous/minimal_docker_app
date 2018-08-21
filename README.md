@@ -140,7 +140,7 @@ In ubuntu 16.04:
     RUN pip install -r requirements.txt
 
     # Run main.py when the container is ready
-    CMD ["python", "main.py"]
+    CMD ["python", "-u", "main.py"]
     ```
 
 * Building the container/image:
@@ -267,8 +267,14 @@ In ubuntu 16.04:
 ## PART 3 - RUNNING
 * Run a image:
     ```
-    sudo docker run urbanon/testapp:yourversiontag
+    sudo docker run -d urbanon/testapp:yourversiontag
+    ```
+
+
+* Get logs:
+    ```
+    sudo docker logs containerID
     ```
     Output:
 
-    `Heey, it should be working`
+        `Heey, it should be working`
